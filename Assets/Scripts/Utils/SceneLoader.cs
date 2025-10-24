@@ -34,21 +34,28 @@ public class SceneLoader : MonoBehaviour
         {
             yield return null;
 
+            float targetProgress;
+
             if (asyncOperation.progress < 0.9f)
             {
-                slider.value = asyncOperation.progress;
-                text.text = $"Loading... {(int)(Mathf.Clamp01(asyncOperation.progress / 0.9f) * 100)}%";
+                targetProgress = asyncOperation.progress;
+                slider.value = targetProgress;
             }
             else
             {
                 timer += Time.unscaledDeltaTime;
-                slider.value = Mathf.Lerp(0.9f, 1f, timer);
+                targetProgress = Mathf.Lerp(0.9f, 1f, timer);
+                slider.value = targetProgress;
+            }
 
-                if (slider.value >= 1f)
-                {
-                    asyncOperation.allowSceneActivation = true;
-                    yield break;
-                }
+            int percent = (int)(Mathf.Clamp01(slider.value) * 100);
+            text.text = $"Loading... {percent}%";
+
+            // 씬 활성화 로직
+            if (asyncOperation.progress >= 0.9f && slider.value >= 1f)
+            {
+                asyncOperation.allowSceneActivation = true;
+                yield break;
             }
         }
     }

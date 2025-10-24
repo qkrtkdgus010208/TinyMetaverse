@@ -16,4 +16,14 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void LoadMainScene()
+    {
+        SceneLoader.LoadScene(SceneNames.MainScene);
+    }
+
+    public void LoadMiniGameScene()
+    {
+        SceneLoader.LoadScene(SceneNames.MiniGameScene);
+    }
 }
