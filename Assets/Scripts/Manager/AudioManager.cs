@@ -1,8 +1,16 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
+
+public enum Bgm { MainBgm, GameBgm }
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance { get; private set; }
+
+    [Header("# BGM")]
+    [SerializeField] private AudioClip[] bgmClips;
+    [SerializeField][Range(0f, 1f)] private float bgmVolume;
+    [SerializeField] private AudioSource audioSource;
 
     private void Awake()
     {
@@ -15,5 +23,41 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        PlayBgm(Bgm.MainBgm);
+    }
+
+    public void PlayBgm(Bgm bgm)
+    {
+        audioSource.clip = bgmClips[(int)bgm];
+        audioSource.Play();
+
+        StartCoroutine(FadeInBgm());
+    }
+
+    IEnumerator FadeInBgm()
+    {
+        float timer = 0f;
+        float fadeTime = 3f; // BGM이 커지는 데 걸리는 시간 (2초)
+        float startVolume = 0f;
+
+        while (timer < fadeTime)
+        {
+            timer += Time.deltaTime;
+            audioSource.volume = Mathf.Lerp(startVolume, bgmVolume, timer / fadeTime);
+            yield return null;
+        }
+
+        // 최종 볼륨으로 설정
+        audioSource.volume = bgmVolume;
+    }
+
+    public void StopBgm()
+    {
+        StopAllCoroutines();
+        audioSource.Stop();
     }
 }
