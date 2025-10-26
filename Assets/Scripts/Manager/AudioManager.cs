@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public enum Bgm { MainBgm, GameBgm }
+public enum Bgm { StartBgm, MainBgm, GameBgm }
 
 public class AudioManager : MonoBehaviour
 {
@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour
 
     [Header("# BGM")]
     [SerializeField] private AudioClip[] bgmClips;
-    [SerializeField][Range(0f, 1f)] private float bgmVolume;
+    [SerializeField][Range(0f, 1f)] private float bgmVolume = 0.1f;
     [SerializeField] private AudioSource audioSource;
 
     private void Awake()
@@ -27,7 +27,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        PlayBgm(Bgm.MainBgm);
+        PlayBgm(Bgm.StartBgm);
     }
 
     public void PlayBgm(Bgm bgm)
@@ -41,7 +41,7 @@ public class AudioManager : MonoBehaviour
     IEnumerator FadeInBgm()
     {
         float timer = 0f;
-        float fadeTime = 3f; // BGM이 커지는 데 걸리는 시간 (2초)
+        float fadeTime = 5f; // BGM이 커지는 데 걸리는 시간
         float startVolume = 0f;
 
         while (timer < fadeTime)
