@@ -42,5 +42,4 @@ public class Obstacle : MonoBehaviour
         if (player != null)
             gameManager.AddScore(1);
     }
-
 }
