@@ -33,6 +33,7 @@ public class GateKeeper : GameEntity
 
     private void Enter()
     {
+        choiceUI.SetActive(false);
         GameManager.Instance.LoadMiniGameScene();
     }
 

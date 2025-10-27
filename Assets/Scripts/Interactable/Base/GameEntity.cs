@@ -56,7 +56,8 @@ public abstract class GameEntity : MonoBehaviour, IInteractable
 
     protected virtual void HideDialogue()
     {
-        dialogueUI.SetActive(false);
+        if (dialogueUI != null)
+            dialogueUI.SetActive(false);
         IsInteracting = false;
     }
 
