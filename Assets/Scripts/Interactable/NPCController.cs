@@ -2,7 +2,7 @@
 
 public enum NPCType { Npc, Monster };
 
-public class NPCController : MonoBehaviour
+public class NPCController : Interactable
 {
     
 }
