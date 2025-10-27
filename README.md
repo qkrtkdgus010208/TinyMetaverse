@@ -1,6 +1,5 @@
 # 🏰TinyMetaverse🏰
 
----
 
 ## 📜 게임 개요
 **TinyMetaverse**는 ZEP과 같이 사용자들이 캐릭터를 조작하며 맵에서 상호작용 할 수 있는 **2D 메타버스 RPG 게임**입니다. 
