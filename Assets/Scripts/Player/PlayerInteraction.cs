@@ -2,6 +2,8 @@
 
 public class PlayerInteraction : MonoBehaviour
 {
+    [SerializeField] private GameObject interactablePopup;
+
     private IInteractable nearestInteractable;
 
     private void Update()
@@ -17,6 +19,7 @@ public class PlayerInteraction : MonoBehaviour
         if (collision.CompareTag("GameEntity"))
         {
             nearestInteractable = collision.GetComponent<IInteractable>();
+            interactablePopup.SetActive(true);
         }
     }
 
@@ -25,6 +28,7 @@ public class PlayerInteraction : MonoBehaviour
         if (collision.CompareTag("GameEntity"))
         {
             nearestInteractable = null;
+            interactablePopup.SetActive(false);
         }
     }
 }
