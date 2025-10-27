@@ -32,7 +32,7 @@ public abstract class GameEntity : MonoBehaviour, IInteractable
         }
     }
 
-    protected void ShowDialogue()
+    private void ShowDialogue()
     {
         if (!dialogueUI || !dialogueText || dialogueTexts.Count == 0)
             return;
@@ -44,7 +44,7 @@ public abstract class GameEntity : MonoBehaviour, IInteractable
         dialogueText.text = dialogueTexts[currentIndex];
     }
 
-    protected void NextDialogue()
+    private void NextDialogue()
     {
         currentIndex++;
 
@@ -60,13 +60,13 @@ public abstract class GameEntity : MonoBehaviour, IInteractable
         IsInteracting = false;
     }
 
-    protected void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
             IsPlayerNearby = true;
     }
 
-    protected void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
