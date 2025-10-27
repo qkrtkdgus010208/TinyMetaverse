@@ -8,7 +8,7 @@ public class GateKeeper : GameEntity
     [SerializeField] private Button startButton;
     [SerializeField] private Button exitButton;
 
-    private void Update()
+    private void Awake()
     {
         startButton.onClick.AddListener(Enter);
         exitButton.onClick.AddListener(Exit);
