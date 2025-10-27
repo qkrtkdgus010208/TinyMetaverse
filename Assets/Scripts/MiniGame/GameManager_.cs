@@ -20,6 +20,8 @@ public class GameManager_ : MonoBehaviour
         get { return uiManager; }
     }
 
+    private bool isAlive;
+
     private int bestScore = 0;
     private int currentScore = 0;
 
@@ -31,6 +33,8 @@ public class GameManager_ : MonoBehaviour
 
     private void Start()
     {
+        isAlive = true;
+
         uiManager.UpdateScore(0);
 
         bestScore = PlayerPrefs.GetInt(BEST_SCORE_KEY, 0);
@@ -38,6 +42,8 @@ public class GameManager_ : MonoBehaviour
 
     public void GameOver()
     {
+        isAlive = false;
+
         if (bestScore < currentScore)
         {
             Debug.Log("최고 점수 갱신");
@@ -60,6 +66,9 @@ public class GameManager_ : MonoBehaviour
 
     public void AddScore(int score)
     {
+        if (!isAlive)
+            return;
+
         currentScore += score;
         uiManager.UpdateScore(currentScore);
         Debug.Log("Score: " + currentScore);
