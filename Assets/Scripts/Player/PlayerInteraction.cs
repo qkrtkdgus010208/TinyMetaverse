@@ -27,7 +27,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (collision.CompareTag("GameEntity"))
         {
-            if (nearestInteractable != null)
+            if (interactablePopup != null)
                 interactablePopup.SetActive(false);
             nearestInteractable = null;
         }
