@@ -31,12 +31,12 @@ public class GateKeeper : GameEntity
             choiceUI.SetActive(true);
     }
 
-    public void Enter()
+    private void Enter()
     {
         GameManager.Instance.LoadMiniGameScene();
     }
 
-    public void Exit()
+    private void Exit()
     {
         choiceUI.SetActive(false);
     }
