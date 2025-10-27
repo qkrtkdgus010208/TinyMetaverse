@@ -41,11 +41,13 @@ public class GameManager_ : MonoBehaviour
         if (bestScore < currentScore)
         {
             Debug.Log("최고 점수 갱신");
-            bestScore = currentScore;
 
+            bestScore = currentScore;
             PlayerPrefs.SetInt(BEST_SCORE_KEY, bestScore);
-            PlayerPrefs.SetInt(LAST_SCORE_KEY, currentScore);
         }
+
+        Debug.Log("최근 점수 갱신");
+        PlayerPrefs.SetInt(LAST_SCORE_KEY, currentScore);
 
         Debug.Log("Game Over");
         uiManager.SetRestart();
