@@ -1,14 +1,16 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI restartText;
+    public GameObject gameOver;
+    public Button GoToMainButton;
 
     public void Start()
     {
-        if (restartText == null)
+        if (gameOver == null)
         {
             Debug.LogError("restart text is null");
         }
@@ -19,16 +21,23 @@ public class UIManager : MonoBehaviour
             return;
         }
 
-        restartText.gameObject.SetActive(false);
+        GoToMainButton.onClick.AddListener(GoToMain);
+
+        gameOver.SetActive(false);
     }
 
     public void SetRestart()
     {
-        restartText.gameObject.SetActive(true);
+        gameOver.SetActive(true);
     }
 
     public void UpdateScore(int score)
     {
         scoreText.text = score.ToString();
+    }
+
+    private void GoToMain()
+    {
+        GameManager.Instance.LoadMainScene();
     }
 }

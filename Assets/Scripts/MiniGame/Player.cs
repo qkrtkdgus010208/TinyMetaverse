@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
         {
             if (deathCooldown <= 0)
             {
-                if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
                     // 게임 재시작
                     gameManager.RestartGame();
