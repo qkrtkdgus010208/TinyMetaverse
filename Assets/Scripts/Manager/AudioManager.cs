@@ -33,6 +33,7 @@ public class AudioManager : MonoBehaviour
     public void PlayBgm(Bgm bgm)
     {
         audioSource.clip = bgmClips[(int)bgm];
+        audioSource.loop = true;
         audioSource.Play();
 
         StartCoroutine(FadeInBgm());
