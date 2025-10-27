@@ -3,6 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager_ : MonoBehaviour
 {
+    private const string BEST_SCORE_KEY = "BestScore";
+    private const string LAST_SCORE_KEY = "LastScore";
+
     static GameManager_ gameManager;
 
     public static GameManager_ Instance
@@ -17,6 +20,7 @@ public class GameManager_ : MonoBehaviour
         get { return uiManager; }
     }
 
+    private int bestScore = 0;
     private int currentScore = 0;
 
     private void Awake()
@@ -28,10 +32,21 @@ public class GameManager_ : MonoBehaviour
     private void Start()
     {
         uiManager.UpdateScore(0);
+
+        bestScore = PlayerPrefs.GetInt(BEST_SCORE_KEY, 0);
     }
 
     public void GameOver()
     {
+        if (bestScore < currentScore)
+        {
+            Debug.Log("최고 점수 갱신");
+            bestScore = currentScore;
+
+            PlayerPrefs.SetInt(BEST_SCORE_KEY, bestScore);
+            PlayerPrefs.SetInt(LAST_SCORE_KEY, currentScore);
+        }
+
         Debug.Log("Game Over");
         uiManager.SetRestart();
     }

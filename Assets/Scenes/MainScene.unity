@@ -9520,8 +9520,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scorePopup: {fileID: 636043563}
   scoreButton: {fileID: 2071059707}
-  bestScore: {fileID: 2135110935}
-  lastScore: {fileID: 1087362033}
+  bestScoreText: {fileID: 2135110935}
+  lastScoreText: {fileID: 1087362033}
 --- !u!1 &1484042309
 GameObject:
   m_ObjectHideFlags: 0
