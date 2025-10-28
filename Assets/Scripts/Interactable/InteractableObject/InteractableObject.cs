@@ -3,7 +3,7 @@ using UnityEngine;
 
 public enum ItemName { Sign, Box }
 
-public class Item : GameEntity
+public class InteractableObject : GameEntity
 {
     [SerializeField] private ItemName itemName;
 
