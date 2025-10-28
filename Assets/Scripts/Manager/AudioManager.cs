@@ -3,27 +3,12 @@ using UnityEngine;
 
 public enum Bgm { StartBgm, MainBgm, GameBgm }
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : Singleton<AudioManager>
 {
-    public static AudioManager Instance { get; private set; }
-
     [Header("# BGM")]
     [SerializeField] private AudioClip[] bgmClips;
     [SerializeField][Range(0f, 1f)] private float bgmVolume = 0.1f;
     [SerializeField] private AudioSource audioSource;
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
 
     private void Start()
     {
