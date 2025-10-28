@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public enum PatrolNPCName { Zombie, Demon, Pumpkin, GateKeeper, }
+public enum PatrolNPCName { Zombie, Demon, Pumpkin }
 
 public class PatrolNPC : MoveEntity
 {
