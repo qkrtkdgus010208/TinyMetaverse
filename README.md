@@ -8,6 +8,15 @@
 
 ---
 
+## 📷 스크린샷
+<img width="400" height="400" alt="스크린샷 2025-11-13 160036" src="https://github.com/user-attachments/assets/78a5bb05-6ce1-4cbd-88b3-ce109dfbe14f" />
+<img width="400" height="400" alt="스크린샷 2025-11-13 160127" src="https://github.com/user-attachments/assets/7f81f322-923a-40fd-b4c6-5ecddd185394" />
+<img width="400" height="400" alt="스크린샷 2025-11-13 160150" src="https://github.com/user-attachments/assets/9084ced3-f321-475e-9bf6-d06f7ce46f1c" />
+<img width="400" height="400" alt="스크린샷 2025-11-13 160214" src="https://github.com/user-attachments/assets/b91fda8d-167f-422e-812a-f5e1c1b59bff" />
+<img width="400" height="400" alt="스크린샷 2025-11-13 160437" src="https://github.com/user-attachments/assets/535f152d-4d0c-40c4-8ec4-7bdf02d94fcb" />
+
+---
+
 ## 🕹️ 조작 방법
 | 조작키 | 기능 |
 |------|------|
@@ -45,15 +54,6 @@
 ### 7️⃣ 로딩 씬
 - **로딩 씬을 통한 부드러운 씬 전환**
 - **슬라이더와 text를 통해 로딩 진행도 표시**
-
----
-
-## 📷 스크린샷
-<img width="400" height="400" alt="스크린샷 2025-11-13 160036" src="https://github.com/user-attachments/assets/78a5bb05-6ce1-4cbd-88b3-ce109dfbe14f" />
-<img width="400" height="400" alt="스크린샷 2025-11-13 160127" src="https://github.com/user-attachments/assets/7f81f322-923a-40fd-b4c6-5ecddd185394" />
-<img width="400" height="400" alt="스크린샷 2025-11-13 160150" src="https://github.com/user-attachments/assets/9084ced3-f321-475e-9bf6-d06f7ce46f1c" />
-<img width="400" height="400" alt="스크린샷 2025-11-13 160214" src="https://github.com/user-attachments/assets/b91fda8d-167f-422e-812a-f5e1c1b59bff" />
-<img width="400" height="400" alt="스크린샷 2025-11-13 160437" src="https://github.com/user-attachments/assets/535f152d-4d0c-40c4-8ec4-7bdf02d94fcb" />
 
 ---
 
